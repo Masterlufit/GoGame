@@ -16,11 +16,20 @@ public class Board {
 		history = new HashMap<>();
 	}
 
-	public void setPosition(int x, int y, String type) {
-		this.board[x - 1][y - 1] = type;
+	// Main next turn caller
+	public void nextController(int x, int y, String type) {
+		this.setPosition(x, y, type);
 		this.addHistory(new Coordinates(x, y), type);
+		this.nextTurn();
+		System.out.println("Player " + type + " placed a piece at X:" + x + " Y:" + y);
 	}
 
+	// Position
+	public void setPosition(int x, int y, String type) {
+		this.board[x - 1][y - 1] = type;
+	}
+
+	// Get all positions on board
 	public String[][] getBoard() {
 		return this.board;
 	}
