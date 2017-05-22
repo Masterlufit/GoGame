@@ -1,5 +1,7 @@
 package mas.go;
 
+import java.util.HashMap;
+
 public class Board {
 	private String[][] board = new String[19][19];
 	private String whoseTurn;
@@ -7,18 +9,23 @@ public class Board {
 	private final String black = "black";
 	private final String white = "white";
 
+	private HashMap<Coordinates, String> history;
+
 	public Board() {
 		whoseTurn = black;
+		history = new HashMap<>();
 	}
 
-	public void setPosition(int x, int z, String type) {
-		this.board[x - 1][z - 1] = type;
+	public void setPosition(int x, int y, String type) {
+		this.board[x - 1][y - 1] = type;
+		this.addHistory(new Coordinates(x, y), type);
 	}
 
 	public String[][] getBoard() {
 		return this.board;
 	}
 
+	// Whose Turn?
 	public void nextTurn() {
 		if (this.whoseTurn.equals(black)) {
 			this.whoseTurn = white;
@@ -39,4 +46,12 @@ public class Board {
 		return this.whoseTurn;
 	}
 
+	// History
+	public void addHistory(Coordinates coods, String type) {
+		history.put(coods, type);
+	}
+
+	public HashMap<Coordinates, String> getHistory() {
+		return this.history;
+	}
 }

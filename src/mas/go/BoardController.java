@@ -23,8 +23,10 @@ public class BoardController {
 	private void handle1_1() {
 		if (board.getTurn().equals(black)) {
 			board.setPosition(1, 1, black);
+			board.nextTurn();
 		} else {
 			board.setPosition(1, 1, white);
+			board.nextTurn();
 		}
 	}
 
@@ -32,8 +34,10 @@ public class BoardController {
 	private void handle1_2() {
 		if (board.getTurn().equals(black)) {
 			board.setPosition(1, 2, black);
+			board.nextTurn();
 		} else {
 			board.setPosition(1, 2, white);
+			board.nextTurn();
 		}
 	}
 
