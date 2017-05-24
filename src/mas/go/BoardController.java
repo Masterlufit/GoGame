@@ -11,6 +11,80 @@ public class BoardController {
 
 	@FXML
 	Circle circle1_1;
+	@FXML
+	Circle circle1_2;
+	@FXML
+	Circle circle1_3;
+	@FXML
+	Circle circle1_4;
+	@FXML
+	Circle circle1_5;
+	@FXML
+	Circle circle1_6;
+	@FXML
+	Circle circle1_7;
+	@FXML
+	Circle circle1_8;
+	@FXML
+	Circle circle1_9;
+	@FXML
+	Circle circle1_10;
+	@FXML
+	Circle circle1_11;
+	@FXML
+	Circle circle1_12;
+	@FXML
+	Circle circle1_13;
+	@FXML
+	Circle circle1_14;
+	@FXML
+	Circle circle1_15;
+	@FXML
+	Circle circle1_16;
+	@FXML
+	Circle circle1_17;
+	@FXML
+	Circle circle1_18;
+	@FXML
+	Circle circle1_19;
+	@FXML
+	Circle circle2_1;
+	@FXML
+	Circle circle2_2;
+	@FXML
+	Circle circle2_3;
+	@FXML
+	Circle circle2_4;
+	@FXML
+	Circle circle2_5;
+	@FXML
+	Circle circle2_6;
+	@FXML
+	Circle circle2_7;
+	@FXML
+	Circle circle2_8;
+	@FXML
+	Circle circle2_9;
+	@FXML
+	Circle circle2_10;
+	@FXML
+	Circle circle2_11;
+	@FXML
+	Circle circle2_12;
+	@FXML
+	Circle circle2_13;
+	@FXML
+	Circle circle2_14;
+	@FXML
+	Circle circle2_15;
+	@FXML
+	Circle circle2_16;
+	@FXML
+	Circle circle2_17;
+	@FXML
+	Circle circle2_18;
+	@FXML
+	Circle circle2_19;
 
 	/**
 	 * Initialize
