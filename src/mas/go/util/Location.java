@@ -1,9 +1,9 @@
-package mas.go;
+package mas.go.util;
 
-public class Coordinates {
+public class Location {
 	private int x, y;
 
-	public Coordinates(int x, int y) {
+	public Location(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}

@@ -3,8 +3,6 @@ package mas.go;
 import java.io.IOException;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -47,11 +45,6 @@ public class MainApp extends Application {
 		}
 	}
 
-	@FXML
-	public void handle(ActionEvent arg0) {
-		System.out.println("asdasdas");
-	}
-
 	/**
 	 * Shows the person overview inside the root layout.
 	 */
@@ -64,6 +57,8 @@ public class MainApp extends Application {
 
 			BoardController ctrl = loader.getController();
 			ctrl.getClass();
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 			gameBoard = new Board();
 
 			// Set person overview into the center of root layout.
