@@ -6,6 +6,7 @@ import mas.go.util.Location;
 import mas.go.util.Logger;
 import mas.go.util.Position;
 import mas.go.util.Stone;
+import sun.nio.cs.Surrogate;
 
 public class Board {
 	private Stone[][] board = new Stone[19][19];
@@ -119,7 +120,11 @@ public class Board {
 	}
 
 	// Check Self Capture
-	public void onCheck(Location loc) {
+	public void onCheck(Location loc, Stone s) {
+		HashMap<Position, Stone> surroundings = this.getSurroundings(loc);
 
+		for (Position pos : surroundings.keySet()) {
+			
+		}
 	}
 }

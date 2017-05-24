@@ -1,7 +1,8 @@
 package mas.go;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 public class BoardController {
 	Board board;
@@ -9,20 +10,27 @@ public class BoardController {
 	String white = "white";
 
 	@FXML
-	private Button grid1_1;
+	Circle circle1_1;
 
 	/**
-	 * Stuff
+	 * Initialize
 	 */
 	@FXML
 	private void initialize() {
 		board = MainApp.gameBoard;
 	}
 
+	/**
+	 * Handler for each piece
+	 */
+
 	@FXML
 	private void handle1_1() {
 		if (board.getTurn().equals(black)) {
 			board.nextController(1, 1, black);
+			
+			circle1_1.setVisible(true);
+			circle1_1.setFill(Color.BLACK);
 		} else {
 			board.nextController(1, 1, white);
 		}

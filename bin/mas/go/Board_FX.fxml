@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="1000.0" maxWidth="1400.0" minHeight="1000.0" minWidth="1400.0" prefHeight="1000.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mas.go.BoardController">
@@ -91,11 +92,12 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Button fx:id="grid1_1" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handle1_1" opacity="0.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Button maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handle1_1" opacity="0.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Circle fx:id="circle1_1" disable="true" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
    <effect>
       <Blend />
