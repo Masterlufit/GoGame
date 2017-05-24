@@ -2,6 +2,7 @@ package mas.go;
 
 import java.util.HashMap;
 
+import javafx.scene.paint.Color;
 import mas.go.util.Location;
 import mas.go.util.Logger;
 import mas.go.util.Position;
@@ -27,7 +28,7 @@ public class Board {
 	}
 
 	// Main next turn caller
-	public void nextController(int x, int y, String type) {
+	public boolean nextController(int x, int y, String type) {
 		if (this.getPieceFromPosition(x, y) == null) {
 			// TODO: Check Rules!!
 			// Self Capture Rule
@@ -41,10 +42,12 @@ public class Board {
 			this.nextTurn();
 
 			logger.gameplay("Player " + type + " placed a piece at X:" + x + " Y:" + y);
+			return true;
 		} else {
 			// Disable placing onto another piece
 			logger.illegal("Player " + type + " tried to place a piece at X:" + x + " Y:" + y + " when a "
 					+ this.getPieceFromPosition(x, y).toString().toLowerCase() + " piece exists");
+			return false;
 		}
 	}
 
@@ -124,7 +127,7 @@ public class Board {
 		HashMap<Position, Stone> surroundings = this.getSurroundings(loc);
 
 		for (Position pos : surroundings.keySet()) {
-			
+
 		}
 	}
 }

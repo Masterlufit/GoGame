@@ -27,12 +27,15 @@ public class BoardController {
 	@FXML
 	private void handle1_1() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(1, 1, black);
-			
-			circle1_1.setVisible(true);
-			circle1_1.setFill(Color.BLACK);
+			if (board.nextController(1, 1, black)) {
+				circle1_1.setOpacity(1);
+				circle1_1.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(1, 1, white);
+			if (board.nextController(1, 1, white)) {
+				circle1_1.setOpacity(1);
+				circle1_1.setFill(Color.WHITE);
+			}
 		}
 	}
 
