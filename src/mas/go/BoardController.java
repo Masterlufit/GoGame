@@ -11,7 +11,6 @@ public class BoardController {
 
 	@FXML
 	Circle circle1_1;
-	
 
 	/**
 	 * Initialize
@@ -24,6 +23,11 @@ public class BoardController {
 	/**
 	 * Handler for each piece
 	 */
+
+	@FXML
+	private void delete() {
+		
+	}
 
 	@FXML
 	private void handle1_1() {
