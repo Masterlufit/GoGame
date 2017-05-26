@@ -2,12 +2,10 @@ package mas.go;
 
 import java.util.HashMap;
 
-import javafx.scene.paint.Color;
 import mas.go.util.Location;
 import mas.go.util.Logger;
 import mas.go.util.Position;
 import mas.go.util.Stone;
-import sun.nio.cs.Surrogate;
 
 public class Board {
 	private Stone[][] board = new Stone[19][19];
@@ -27,12 +25,20 @@ public class Board {
 		logger.info("Game Starts");
 	}
 
-	// Main next turn caller
+	// Main next turn controller
 	public boolean nextController(int x, int y, String type) {
+		x--;
+		y--;
 		if (this.getPieceFromPosition(x, y) == null) {
 			// TODO: Check Rules!!
 			// Self Capture Rule
 			Stone piece = Stone.valueOf(type.toUpperCase());
+			if (this.checkSelfCapture(new Location(x, y), piece, Position.NULL)) {
+				// Disable Self Capture
+				logger.illegal("Player " + type + " tried to place a piece at X:" + x + " Y:" + y
+						+ " when it is self capture!");
+				return false;
+			}
 
 			// Legal Move
 			this.setPosition(x, y, type);
@@ -53,14 +59,18 @@ public class Board {
 
 	// Position
 	public void setPosition(int x, int y, String type) {
-		this.board[x - 1][y - 1] = Stone.valueOf(type.toUpperCase());
+		this.board[x][y] = Stone.valueOf(type.toUpperCase());
 	}
 
 	public Stone getPieceFromPosition(int x, int y) {
-		if (this.board[x - 1][y - 1] == null) {
+		if (x < 0 || x > 18 || y < 0 || y > 18) {
+			return Stone.BOARDER;
+		}
+
+		if (this.board[x][y] == null) {
 			return null;
 		} else {
-			return this.board[x - 1][y - 1];
+			return this.board[x][y];
 		}
 	}
 
@@ -105,29 +115,130 @@ public class Board {
 		int x = loc.getX(), y = loc.getY();
 		// Up
 		y++;
-		surroundings.put(Position.UP, this.getPieceFromPosition(x, y));
+		if (y > 18) {
+			surroundings.put(Position.UP, null);
+		} else {
+			surroundings.put(Position.UP, this.getPieceFromPosition(x, y));
+		}
 		y--;
 		// Down
 		y--;
-		surroundings.put(Position.DOWN, this.getPieceFromPosition(x, y));
+		if (y < 0) {
+			surroundings.put(Position.DOWN, null);
+		} else {
+			surroundings.put(Position.DOWN, this.getPieceFromPosition(x, y));
+		}
 		y++;
 		// Left
 		x--;
-		surroundings.put(Position.LEFT, this.getPieceFromPosition(x, y));
+		if (x < 0) {
+			surroundings.put(Position.LEFT, null);
+		} else {
+			surroundings.put(Position.LEFT, this.getPieceFromPosition(x, y));
+		}
 		x++;
 		// Right
 		x++;
-		surroundings.put(Position.RIGHT, this.getPieceFromPosition(x, y));
+		if (x > 18) {
+			surroundings.put(Position.RIGHT, null);
+		} else {
+			surroundings.put(Position.RIGHT, this.getPieceFromPosition(x, y));
+		}
 		x--;
 		return surroundings;
 	}
 
 	// Check Self Capture
-	public void onCheck(Location loc, Stone s) {
+	public boolean checkSelfCapture(Location loc, Stone s, Position fromPos) {
+		boolean output = false;
 		HashMap<Position, Stone> surroundings = this.getSurroundings(loc);
+		Stone original = this.getPieceFromPosition(loc.getX(), loc.getY());
 
+		boolean up = false;
+		boolean down = false;
+		boolean left = false;
+		boolean right = false;
 		for (Position pos : surroundings.keySet()) {
+			if (pos == fromPos) {
+				String positionString = fromPos.toString().toLowerCase();
+				if (positionString.equals("up")) {
+					up = true;
+				} else if (positionString.equals("down")) {
+					down = true;
+				} else if (positionString.equals("left")) {
+					left = true;
+				} else if (positionString.equals("right")) {
+					right = true;
+				}
+			} else {
+				if (pos == Position.UP) {
+					Location newLocation = loc.add(0, 1);
+					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
+					// System.out.println(newLocation);
 
+					if (detect == Stone.BOARDER) {
+						up = true;
+					} else if (detect == null) {
+						up = false;
+					} else {
+						if (detect == original) {
+							this.checkSelfCapture(newLocation, detect, Position.UP);
+						} else {
+							up = true;
+						}
+					}
+				} else if (pos == Position.DOWN) {
+					Location newLocation = loc.add(0, -1);
+					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
+
+					if (detect == Stone.BOARDER) {
+						down = true;
+					} else if (detect == null) {
+						down = false;
+					} else {
+						if (detect == original) {
+							this.checkSelfCapture(newLocation, detect, Position.DOWN);
+						} else {
+							down = true;
+						}
+					}
+				} else if (pos == Position.LEFT) {
+					Location newLocation = loc.add(-1, 0);
+					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
+
+					if (detect == Stone.BOARDER) {
+						down = true;
+					} else if (detect == null) {
+						left = false;
+					} else {
+						if (detect == original) {
+							this.checkSelfCapture(newLocation, detect, Position.LEFT);
+						} else {
+							left = true;
+						}
+					}
+				} else if (pos == Position.RIGHT) {
+					Location newLocation = loc.add(1, 0);
+					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
+
+					if (detect == Stone.BOARDER) {
+						down = true;
+					} else if (detect == null) {
+						right = false;
+					} else {
+						if (detect == original) {
+							this.checkSelfCapture(newLocation, detect, Position.RIGHT);
+						} else {
+							right = true;
+						}
+					}
+				}
+			}
 		}
+
+		if (up && down && left && right) {
+			output = true;
+		}
+		return output;
 	}
 }

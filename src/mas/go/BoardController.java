@@ -11,6 +11,7 @@ public class BoardController {
 
 	@FXML
 	Circle circle1_1;
+	
 
 	/**
 	 * Initialize

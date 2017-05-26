@@ -1,5 +1,5 @@
 package mas.go.util;
 
 public enum Stone {
-	BLACK(), WHITE();
+	BLACK(), WHITE(), BOARDER();
 }
