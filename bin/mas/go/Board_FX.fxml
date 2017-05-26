@@ -19,7 +19,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="1000.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-384.0" AnchorPane.topAnchor="0.0">
+                  <ImageView fitHeight="1000.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../../../assets/board.jpg" />
                      </image>
@@ -91,7 +91,18 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Circle fx:id="circle1_1" onMouseClicked="#handle1_1" opacity="0.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_1" onMouseClicked="#handle1_1" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_2" onMouseClicked="#handle1_2" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_3" onMouseClicked="#handle1_3" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="94.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_4" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="141.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_5" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_6" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="235.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_7" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="282.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_8" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="329.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_9" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="376.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_10" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="423.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle_11" layoutX="10.0" layoutY="12.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="470.0" AnchorPane.topAnchor="0.0" />
+      <Circle fx:id="circle1_12" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="517.0" AnchorPane.topAnchor="0.0" />
    </children>
    <effect>
       <Blend />
