@@ -87,25 +87,52 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Circle fx:id="circle1_1" onMouseClicked="#handle1_1" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_2" layoutX="77.0" layoutY="975.0" onMouseClicked="#handle1_2" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_3" layoutX="132.0" layoutY="975.0" onMouseClicked="#handle1_3" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="104.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_4" onMouseClicked="#handle1_4" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="156.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_5" layoutX="234.0" layoutY="975.0" onMouseClicked="#handle1_5" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="209.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_6" layoutX="287.0" layoutY="975.0" onMouseClicked="#handle1_6" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="262.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_7" layoutX="340.0" layoutY="975.0" onMouseClicked="#handle1_7" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_8" onMouseClicked="#handle1_8" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="368.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_9" onMouseClicked="#handle1_9" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="421.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_10" onMouseClicked="#handle1_10" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="474.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle_11" layoutX="10.0" layoutY="12.0" onMouseClicked="#handle1_11" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="527.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_12" onMouseClicked="#handle1_12" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="580.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_13" layoutX="10.0" layoutY="10.0" onMouseClicked="#handle1_13" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="633.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_14" layoutX="20.0" layoutY="20.0" onMouseClicked="#handle1_14" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="686.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_15" layoutX="20.0" layoutY="20.0" onMouseClicked="#handle1_15" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="739.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_16" layoutX="20.0" layoutY="20.0" onMouseClicked="#handle1_16" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="792.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_17" layoutX="20.0" layoutY="20.0" onMouseClicked="#handle1_17" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="845.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_18" layoutX="880.0" layoutY="985.0" onMouseClicked="#handle1_18" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="898.0" AnchorPane.topAnchor="950.0" />
-      <Circle fx:id="circle1_19" layoutX="890.0" layoutY="995.0" onMouseClicked="#handle1_19" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="951.0" AnchorPane.topAnchor="950.0" />
+      <AnchorPane layoutY="950.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="975.0">
+         <children>
+            <Circle fx:id="circle1_1" onMouseClicked="#handle1_1" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_2" layoutX="52.0" onMouseClicked="#handle1_2" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_3" layoutX="104.0" onMouseClicked="#handle1_3" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_4" layoutX="156.0" onMouseClicked="#handle1_4" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_5" layoutX="209.0" onMouseClicked="#handle1_5" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_6" layoutX="262.0" onMouseClicked="#handle1_6" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_7" layoutX="315.0" onMouseClicked="#handle1_7" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_8" layoutX="368.0" onMouseClicked="#handle1_8" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_9" layoutX="421.0" onMouseClicked="#handle1_9" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_10" layoutX="474.0" onMouseClicked="#handle1_10" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle_11" layoutX="527.0" onMouseClicked="#handle1_11" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_12" layoutX="580.0" onMouseClicked="#handle1_12" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_13" layoutX="633.0" onMouseClicked="#handle1_13" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_14" layoutX="686.0" onMouseClicked="#handle1_14" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_15" layoutX="739.0" onMouseClicked="#handle1_15" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_16" layoutX="792.0" onMouseClicked="#handle1_16" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_17" layoutX="845.0" onMouseClicked="#handle1_17" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_18" layoutX="898.0" onMouseClicked="#handle1_18" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_19" layoutX="951.0" onMouseClicked="#handle1_19" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="960.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="922.0">
+         <children>
+            <Circle fx:id="circle2_1" onMouseClicked="#handle2_1" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_21" layoutX="52.0" onMouseClicked="#handle1_2" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_31" layoutX="104.0" onMouseClicked="#handle1_3" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_41" layoutX="156.0" onMouseClicked="#handle1_4" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_51" layoutX="209.0" onMouseClicked="#handle1_5" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_61" layoutX="262.0" onMouseClicked="#handle1_6" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_71" layoutX="315.0" onMouseClicked="#handle1_7" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_81" layoutX="368.0" onMouseClicked="#handle1_8" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_91" layoutX="421.0" onMouseClicked="#handle1_9" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_101" layoutX="474.0" onMouseClicked="#handle1_10" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle_111" layoutX="527.0" onMouseClicked="#handle1_11" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_121" layoutX="580.0" onMouseClicked="#handle1_12" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_131" layoutX="633.0" onMouseClicked="#handle1_13" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_141" layoutX="686.0" onMouseClicked="#handle1_14" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_151" layoutX="739.0" onMouseClicked="#handle1_15" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_161" layoutX="792.0" onMouseClicked="#handle1_16" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_171" layoutX="845.0" onMouseClicked="#handle1_17" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_181" layoutX="898.0" onMouseClicked="#handle1_18" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_191" layoutX="951.0" onMouseClicked="#handle1_19" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
    </children>
    <effect>
       <Blend />
