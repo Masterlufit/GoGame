@@ -11,7 +11,6 @@ public class BoardController {
 
 	@FXML
 	Circle circle1_1;
-<<<<<<< HEAD
 	@FXML
 	Circle circle1_2;
 	@FXML
@@ -732,10 +731,6 @@ public class BoardController {
 	Circle circle19_18;
 	@FXML
 	Circle circle19_19;
-	@FXML
-	
-=======
->>>>>>> origin/master
 
 	/**
 	 * Initialize
@@ -751,7 +746,7 @@ public class BoardController {
 
 	@FXML
 	private void delete() {
-		
+
 	}
 
 	@FXML
@@ -1037,7 +1032,7 @@ public class BoardController {
 				circle1_19.setFill(Color.WHITE);
 			}
 		}
-	
+	}
 
 	@FXML
 	private void handle2_1() {
@@ -1247,8 +1242,7 @@ public class BoardController {
 				circle2_14.setFill(Color.WHITE);
 			}
 		}
-	}	
-	
+	}
 
 	@FXML
 	private void handle2_15() {
@@ -1549,6 +1543,7 @@ public class BoardController {
 			}
 		}
 	}
+
 	@FXML
 	private void handle3_16() {
 		if (board.getTurn().equals(black)) {
@@ -1758,7 +1753,6 @@ public class BoardController {
 			}
 		}
 	}
-	
 
 	@FXML
 	private void handle4_11() {
