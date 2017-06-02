@@ -220,7 +220,7 @@
             <Circle fx:id="circle6_14" layoutX="686.0" onMouseClicked="#handle6_14" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle6_15" layoutX="739.0" onMouseClicked="#handle6_15" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle6_16" layoutX="792.0" onMouseClicked="#handle6_16" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circle6_17" layoutX="845.0" onMouseClicked="#handl6_17" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle6_17" layoutX="845.0" onMouseClicked="#handle6_17" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle6_18" layoutX="898.0" onMouseClicked="#handle6_18" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle6_19" layoutX="951.0" onMouseClicked="#handle6_19" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
          </children>

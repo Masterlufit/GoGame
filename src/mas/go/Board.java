@@ -29,7 +29,7 @@ public class Board {
 	public boolean nextController(int x, int y, String type) {
 		x--;
 		y--;
-		if (this.getPieceFromPosition(x, y) == null) {
+		if (this.getPieceFromPosition(x, y) == Stone.EMPTY) {
 			// TODO: Check Rules!!
 			// Self Capture Rule
 			Stone piece = Stone.valueOf(type.toUpperCase());
@@ -68,7 +68,7 @@ public class Board {
 		}
 
 		if (this.board[x][y] == null) {
-			return null;
+			return Stone.EMPTY;
 		} else {
 			return this.board[x][y];
 		}
@@ -116,7 +116,7 @@ public class Board {
 		// Up
 		y++;
 		if (y > 18) {
-			surroundings.put(Position.UP, null);
+			surroundings.put(Position.UP, Stone.EMPTY);
 		} else {
 			surroundings.put(Position.UP, this.getPieceFromPosition(x, y));
 		}
@@ -124,7 +124,7 @@ public class Board {
 		// Down
 		y--;
 		if (y < 0) {
-			surroundings.put(Position.DOWN, null);
+			surroundings.put(Position.DOWN, Stone.EMPTY);
 		} else {
 			surroundings.put(Position.DOWN, this.getPieceFromPosition(x, y));
 		}
@@ -132,7 +132,7 @@ public class Board {
 		// Left
 		x--;
 		if (x < 0) {
-			surroundings.put(Position.LEFT, null);
+			surroundings.put(Position.LEFT, Stone.EMPTY);
 		} else {
 			surroundings.put(Position.LEFT, this.getPieceFromPosition(x, y));
 		}
@@ -140,7 +140,7 @@ public class Board {
 		// Right
 		x++;
 		if (x > 18) {
-			surroundings.put(Position.RIGHT, null);
+			surroundings.put(Position.RIGHT, Stone.EMPTY);
 		} else {
 			surroundings.put(Position.RIGHT, this.getPieceFromPosition(x, y));
 		}
@@ -178,7 +178,7 @@ public class Board {
 
 					if (detect == Stone.BOARDER) {
 						up = true;
-					} else if (detect == null) {
+					} else if (detect == Stone.EMPTY) {
 						up = false;
 					} else {
 						if (detect == original) {
@@ -193,7 +193,7 @@ public class Board {
 
 					if (detect == Stone.BOARDER) {
 						down = true;
-					} else if (detect == null) {
+					} else if (detect == Stone.EMPTY) {
 						down = false;
 					} else {
 						if (detect == original) {
@@ -208,7 +208,7 @@ public class Board {
 
 					if (detect == Stone.BOARDER) {
 						down = true;
-					} else if (detect == null) {
+					} else if (detect == Stone.EMPTY) {
 						left = false;
 					} else {
 						if (detect == original) {
@@ -223,7 +223,7 @@ public class Board {
 
 					if (detect == Stone.BOARDER) {
 						down = true;
-					} else if (detect == null) {
+					} else if (detect == Stone.EMPTY) {
 						right = false;
 					} else {
 						if (detect == original) {
