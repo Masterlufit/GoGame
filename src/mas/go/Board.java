@@ -150,6 +150,7 @@ public class Board {
 
 	// Check Self Capture
 	public boolean checkSelfCapture(Location loc, Stone s, Position fromPos) {
+		System.out.println("1");
 		boolean output = false;
 		HashMap<Position, Stone> surroundings = this.getSurroundings(loc);
 		Stone original = this.getPieceFromPosition(loc.getX(), loc.getY());
@@ -170,68 +171,73 @@ public class Board {
 				} else if (positionString.equals("right")) {
 					right = true;
 				}
+				System.out.println("Recursive!");
 			} else {
-				if (pos == Position.UP) {
+				if (pos == Position.UP) {System.out.println("UP!");
 					Location newLocation = loc.add(0, 1);
 					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
 					// System.out.println(newLocation);
 
-					if (detect == Stone.BOARDER) {
+					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
 						up = true;
-					} else if (detect == Stone.EMPTY) {
+					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
 						up = false;
-					} else {
-						if (detect == original) {
+					} else {System.out.println("Hit Wall!");
+						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.UP);
-						} else {
+						} else {System.out.println("WALLLLL!");
 							up = true;
 						}
 					}
-				} else if (pos == Position.DOWN) {
+					loc.add(0, -1);
+				} else if (pos == Position.DOWN) {System.out.println("DOWN!");
 					Location newLocation = loc.add(0, -1);
 					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
 
-					if (detect == Stone.BOARDER) {
+					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
 						down = true;
-					} else if (detect == Stone.EMPTY) {
+					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
 						down = false;
 					} else {
-						if (detect == original) {
+						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.DOWN);
-						} else {
+						} else {System.out.println("WALLLLL!");
 							down = true;
 						}
 					}
-				} else if (pos == Position.LEFT) {
+					loc.add(0, 1);
+				} else if (pos == Position.LEFT) {System.out.println("LEFT!");
 					Location newLocation = loc.add(-1, 0);
 					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
 
-					if (detect == Stone.BOARDER) {
+					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
 						down = true;
-					} else if (detect == Stone.EMPTY) {
+					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
 						left = false;
 					} else {
-						if (detect == original) {
+						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.LEFT);
-						} else {
+						} else {System.out.println("WALLLLL!");
 							left = true;
 						}
 					}
-				} else if (pos == Position.RIGHT) {
+					loc.add(1, 0);
+				} else if (pos == Position.RIGHT) {System.out.println("RIGHT!");
 					Location newLocation = loc.add(1, 0);
 					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
 
-					if (detect == Stone.BOARDER) {
+					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
 						down = true;
-					} else if (detect == Stone.EMPTY) {
+					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
 						right = false;
 					} else {
-						if (detect == original) {
+						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.RIGHT);
-						} else {
+						} else {System.out.println("WALLLLL!");
 							right = true;
 						}
 					}
+					loc.add(-1, 0);
 				}
 			}
 		}
@@ -239,6 +245,8 @@ public class Board {
 		if (up && down && left && right) {
 			output = true;
 		}
+		System.out.println("end");
+		System.out.println(output);
 		return output;
 	}
 }

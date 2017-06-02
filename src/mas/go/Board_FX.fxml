@@ -99,7 +99,7 @@
             <Circle fx:id="circle1_8" layoutX="368.0" onMouseClicked="#handle1_8" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle1_9" layoutX="421.0" onMouseClicked="#handle1_9" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle1_10" layoutX="474.0" onMouseClicked="#handle1_10" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circle_11" layoutX="527.0" onMouseClicked="#handle1_11" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle1_11" layoutX="527.0" onMouseClicked="#handle1_11" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle1_12" layoutX="580.0" onMouseClicked="#handle1_12" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle1_13" layoutX="633.0" onMouseClicked="#handle1_13" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="circle1_14" layoutX="686.0" onMouseClicked="#handle1_14" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
