@@ -152,7 +152,7 @@ public class Board {
 	public boolean checkSelfCapture(Location loc, Stone s, Position fromPos) {
 		boolean output = false;
 		HashMap<Position, Stone> surroundings = this.getSurroundings(loc);
-		Stone original = this.getPieceFromPosition(loc.getX(), loc.getY());
+		Stone original = Stone.valueOf(this.getTurn().toUpperCase());
 
 		for (Position pos : surroundings.keySet()) {
 			System.err.println(pos.toString()+": "+surroundings.get(pos));
