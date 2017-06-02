@@ -32,7 +32,7 @@ public class Board {
 		if (this.getPieceFromPosition(x, y) == Stone.EMPTY) {
 			// TODO: Check Rules!!
 			// Self Capture Rule
-			Stone piece = Stone.valueOf(type.toUpperCase());
+			Stone piece=Stone.valueOf(type.toUpperCase());
 			if (this.checkSelfCapture(new Location(x, y), piece, Position.NULL)) {
 				// Disable Self Capture
 				logger.illegal("Player " + type + " tried to place a piece at X:" + x + " Y:" + y
@@ -43,7 +43,7 @@ public class Board {
 			// Legal Move
 			this.setPosition(x, y, type);
 			// Log history only if legal
-			this.addHistory(new Location(x, y), Stone.valueOf(type.toUpperCase()));
+			this.addHistory(new Location(x, y), piece);
 			// Next turn for player
 			this.nextTurn();
 
@@ -59,7 +59,7 @@ public class Board {
 
 	// Position
 	public void setPosition(int x, int y, String type) {
-		this.board[x][y] = Stone.valueOf(type.toUpperCase());
+		this.board[x][y] = Stone.getValue(type.toUpperCase());
 	}
 
 	public Stone getPieceFromPosition(int x, int y) {
@@ -150,11 +150,15 @@ public class Board {
 
 	// Check Self Capture
 	public boolean checkSelfCapture(Location loc, Stone s, Position fromPos) {
-		System.out.println("1");
 		boolean output = false;
 		HashMap<Position, Stone> surroundings = this.getSurroundings(loc);
 		Stone original = this.getPieceFromPosition(loc.getX(), loc.getY());
 
+		for (Position pos : surroundings.keySet()) {
+			System.err.println(pos.toString()+": "+surroundings.get(pos));
+		}
+		System.err.println(s);
+		
 		boolean up = false;
 		boolean down = false;
 		boolean left = false;
@@ -185,7 +189,7 @@ public class Board {
 					} else {System.out.println("Hit Wall!");
 						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.UP);
-						} else {System.out.println("WALLLLL!");
+						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
 							up = true;
 						}
 					}
@@ -201,7 +205,7 @@ public class Board {
 					} else {
 						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.DOWN);
-						} else {System.out.println("WALLLLL!");
+						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
 							down = true;
 						}
 					}
@@ -217,7 +221,7 @@ public class Board {
 					} else {
 						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.LEFT);
-						} else {System.out.println("WALLLLL!");
+						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
 							left = true;
 						}
 					}
@@ -233,7 +237,7 @@ public class Board {
 					} else {
 						if (detect == original) {System.out.println("Same Color!");
 							this.checkSelfCapture(newLocation, detect, Position.RIGHT);
-						} else {System.out.println("WALLLLL!");
+						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
 							right = true;
 						}
 					}
@@ -245,8 +249,13 @@ public class Board {
 		if (up && down && left && right) {
 			output = true;
 		}
-		System.out.println("end");
 		System.out.println(output);
+		for(int xx=0 ;xx<board.length;xx++){
+			for(int yy=0;yy<board[0].length;yy++){
+				System.out.print(board[xx][yy] + " ");
+			}
+			System.out.println();
+		}
 		return output;
 	}
 }
