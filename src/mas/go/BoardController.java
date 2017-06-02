@@ -11,6 +11,7 @@ public class BoardController {
 
 	@FXML
 	Circle circle1_1;
+<<<<<<< HEAD
 	@FXML
 	Circle circle1_2;
 	@FXML
@@ -733,6 +734,8 @@ public class BoardController {
 	Circle circle19_19;
 	@FXML
 	
+=======
+>>>>>>> origin/master
 
 	/**
 	 * Initialize
@@ -745,6 +748,11 @@ public class BoardController {
 	/**
 	 * Handler for each piece
 	 */
+
+	@FXML
+	private void delete() {
+		
+	}
 
 	@FXML
 	private void handle1_1() {
@@ -1890,261 +1898,435 @@ public class BoardController {
 	@FXML
 	private void handle5_1() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 1, black);
+			if (board.nextController(5, 1, black)) {
+				circle5_1.setOpacity(1);
+				circle5_1.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 1, white);
+			if (board.nextController(5, 1, white)) {
+				circle5_1.setOpacity(1);
+				circle5_1.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_2() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 2, black);
+			if (board.nextController(5, 2, black)) {
+				circle5_2.setOpacity(1);
+				circle5_2.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 2, white);
+			if (board.nextController(5, 2, white)) {
+				circle5_2.setOpacity(1);
+				circle5_2.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_3() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 3, black);
+			if (board.nextController(5, 3, black)) {
+				circle5_3.setOpacity(1);
+				circle5_3.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 3, white);
+			if (board.nextController(5, 3, white)) {
+				circle5_3.setOpacity(1);
+				circle5_3.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_4() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 4, black);
+			if (board.nextController(5, 4, black)) {
+				circle5_4.setOpacity(1);
+				circle5_4.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 4, white);
+			if (board.nextController(5, 4, white)) {
+				circle5_4.setOpacity(1);
+				circle5_4.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_5() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 5, black);
+			if (board.nextController(5, 5, black)) {
+				circle5_5.setOpacity(1);
+				circle5_5.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 5, white);
+			if (board.nextController(5, 5, white)) {
+				circle5_5.setOpacity(1);
+				circle5_5.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_6() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 6, black);
+			if (board.nextController(5, 6, black)) {
+				circle5_6.setOpacity(1);
+				circle5_6.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 6, white);
+			if (board.nextController(5, 6, white)) {
+				circle5_6.setOpacity(1);
+				circle5_6.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_7() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 7, black);
+			if (board.nextController(5, 7, black)) {
+				circle5_7.setOpacity(1);
+				circle5_7.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 7, white);
+			if (board.nextController(5, 7, white)) {
+				circle5_7.setOpacity(1);
+				circle5_7.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_8() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 8, black);
+			if (board.nextController(5, 8, black)) {
+				circle5_8.setOpacity(1);
+				circle5_8.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 8, white);
+			if (board.nextController(5, 8, white)) {
+				circle5_8.setOpacity(1);
+				circle5_8.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_9() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 9, black);
+			if (board.nextController(5, 9, black)) {
+				circle5_9.setOpacity(1);
+				circle5_9.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 9, white);
+			if (board.nextController(5, 9, white)) {
+				circle5_9.setOpacity(1);
+				circle5_9.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_10() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 10, black);
+			if (board.nextController(5, 10, black)) {
+				circle5_10.setOpacity(1);
+				circle5_10.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 10, white);
+			if (board.nextController(5, 10, white)) {
+				circle5_10.setOpacity(1);
+				circle5_10.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_11() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 11, black);
+			if (board.nextController(5, 11, black)) {
+				circle5_11.setOpacity(1);
+				circle5_11.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 11, white);
+			if (board.nextController(5, 11, white)) {
+				circle5_11.setOpacity(1);
+				circle5_11.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_12() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 12, black);
+			if (board.nextController(5, 12, black)) {
+				circle5_12.setOpacity(1);
+				circle5_12.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 12, white);
+			if (board.nextController(5, 12, white)) {
+				circle5_12.setOpacity(1);
+				circle5_12.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_13() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 13, black);
+			if (board.nextController(5, 13, black)) {
+				circle5_13.setOpacity(1);
+				circle5_13.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 13, white);
+			if (board.nextController(5, 13, white)) {
+				circle5_13.setOpacity(1);
+				circle5_13.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_14() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 14, black);
+			if (board.nextController(5, 14, black)) {
+				circle5_14.setOpacity(1);
+				circle5_14.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 14, white);
+			if (board.nextController(5, 14, white)) {
+				circle5_14.setOpacity(1);
+				circle5_14.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_15() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 15, black);
+			if (board.nextController(5, 15, black)) {
+				circle5_15.setOpacity(1);
+				circle5_15.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 15, white);
+			if (board.nextController(5, 15, white)) {
+				circle5_15.setOpacity(1);
+				circle5_15.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_16() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 16, black);
+			if (board.nextController(5, 16, black)) {
+				circle5_16.setOpacity(1);
+				circle5_16.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 16, white);
+			if (board.nextController(5, 16, white)) {
+				circle5_16.setOpacity(1);
+				circle5_16.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_17() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 17, black);
+			if (board.nextController(5, 17, black)) {
+				circle5_17.setOpacity(1);
+				circle5_17.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 17, white);
+			if (board.nextController(5, 17, white)) {
+				circle5_17.setOpacity(1);
+				circle5_17.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_18() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 18, black);
+			if (board.nextController(5, 18, black)) {
+				circle5_18.setOpacity(1);
+				circle5_18.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 18, white);
+			if (board.nextController(5, 18, white)) {
+				circle5_18.setOpacity(1);
+				circle5_18.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle5_19() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(5, 19, black);
+			if (board.nextController(5, 19, black)) {
+				circle5_19.setOpacity(1);
+				circle5_19.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(5, 19, white);
+			if (board.nextController(5, 19, white)) {
+				circle5_19.setOpacity(1);
+				circle5_19.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_1() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 1, black);
+			if (board.nextController(6, 1, black)) {
+				circle6_1.setOpacity(1);
+				circle6_1.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 1, white);
+			if (board.nextController(6, 1, white)) {
+				circle6_1.setOpacity(1);
+				circle6_1.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_2() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 2, black);
+			if (board.nextController(6, 2, black)) {
+				circle6_2.setOpacity(1);
+				circle6_2.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 2, white);
+			if (board.nextController(6, 2, white)) {
+				circle6_2.setOpacity(1);
+				circle6_2.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_3() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 3, black);
+			if (board.nextController(6, 3, black)) {
+				circle6_3.setOpacity(1);
+				circle6_3.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 3, white);
+			if (board.nextController(6, 3, white)) {
+				circle6_3.setOpacity(1);
+				circle6_3.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_4() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(7, 4, black);
+			if (board.nextController(6, 4, black)) {
+				circle6_4.setOpacity(1);
+				circle6_4.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(7, 4, white);
+			if (board.nextController(6, 4, white)) {
+				circle6_4.setOpacity(1);
+				circle6_4.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_5() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(7, 5, black);
+			if (board.nextController(6, 5, black)) {
+				circle6_5.setOpacity(1);
+				circle6_5.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(7, 5, white);
+			if (board.nextController(6, 5, white)) {
+				circle6_5.setOpacity(1);
+				circle6_5.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_6() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 6, black);
+			if (board.nextController(6, 6, black)) {
+				circle6_6.setOpacity(1);
+				circle6_6.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 6, white);
+			if (board.nextController(6, 6, white)) {
+				circle6_6.setOpacity(1);
+				circle6_6.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_7() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 7, black);
+			if (board.nextController(6, 7, black)) {
+				circle6_7.setOpacity(1);
+				circle6_7.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 7, white);
+			if (board.nextController(6, 7, white)) {
+				circle6_7.setOpacity(1);
+				circle6_7.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_8() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 8, black);
+			if (board.nextController(6, 8, black)) {
+				circle6_8.setOpacity(1);
+				circle6_8.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 8, white);
+			if (board.nextController(6, 8, white)) {
+				circle6_8.setOpacity(1);
+				circle6_8.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_9() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 9, black);
+			if (board.nextController(6, 9, black)) {
+				circle6_9.setOpacity(1);
+				circle6_9.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 9, white);
+			if (board.nextController(6, 9, white)) {
+				circle6_9.setOpacity(1);
+				circle6_9.setFill(Color.WHITE);
+			}
 		}
 	}
 
 	@FXML
 	private void handle6_10() {
 		if (board.getTurn().equals(black)) {
-			board.nextController(6, 10, black);
+			if (board.nextController(6, 10, black)) {
+				circle6_10.setOpacity(1);
+				circle6_10.setFill(Color.BLACK);
+			}
 		} else {
-			board.nextController(6, 10, white);
+			if (board.nextController(6, 10, white)) {
+				circle6_10.setOpacity(1);
+				circle6_10.setFill(Color.WHITE);
+			}
 		}
 	}
 

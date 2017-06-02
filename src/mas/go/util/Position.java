@@ -1,5 +1,5 @@
 package mas.go.util;
 
 public enum Position {
-	UP(), DOWN(), LEFT(), RIGHT();
+	UP(), DOWN(), LEFT(), RIGHT(), NULL();
 }
