@@ -6,9 +6,9 @@ public enum Stone {
 	public static Stone getValue(String value) {
 		value = value.trim().toLowerCase();
 		if (value.equals("black")) {
-			return WHITE;
-		} else {
 			return BLACK;
+		} else {
+			return WHITE;
 		}
 	}
 

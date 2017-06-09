@@ -30,7 +30,7 @@ public class Location {
 		this.x += x;
 		this.y += y;
 
-		return new Location(this.x, this.y);
+		return this;
 	}
 
 	public String toString() {

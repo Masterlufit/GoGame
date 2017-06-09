@@ -3418,6 +3418,7 @@ public class BoardController {
 			}
 		}
 	}
+
 	@FXML
 	private void handle10_8() {
 		if (board.getTurn().equals(black)) {
@@ -3627,7 +3628,7 @@ public class BoardController {
 			}
 		}
 	}
-		
+
 	@FXML
 	private void handle11_3() {
 		if (board.getTurn().equals(black)) {
@@ -4107,6 +4108,7 @@ public class BoardController {
 			}
 		}
 	}
+
 	@FXML
 	private void handle12_16() {
 		if (board.getTurn().equals(black)) {
@@ -4901,6 +4903,7 @@ public class BoardController {
 			}
 		}
 	}
+
 	@FXML
 	private void handle15_12() {
 		if (board.getTurn().equals(black)) {
@@ -6160,3 +6163,4 @@ public class BoardController {
 			}
 		}
 	}
+}

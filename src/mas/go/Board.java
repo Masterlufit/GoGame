@@ -12,6 +12,7 @@ public class Board {
 	private String whoseTurn;
 
 	private final String black = "black", white = "white";
+	private final boolean debug = true;
 
 	private HashMap<Location, Stone> history;
 
@@ -32,8 +33,9 @@ public class Board {
 		if (this.getPieceFromPosition(x, y) == Stone.EMPTY) {
 			// TODO: Check Rules!!
 			// Self Capture Rule
-			Stone piece=Stone.valueOf(type.toUpperCase());
-			if (this.checkSelfCapture(new Location(x, y), piece, Position.NULL)) {
+			Stone piece = Stone.valueOf(type.toUpperCase());
+
+			if (this.isSelfCapture(piece, new Location(x, y), Position.NULL)) {
 				// Disable Self Capture
 				logger.illegal("Player " + type + " tried to place a piece at X:" + x + " Y:" + y
 						+ " when it is self capture!");
@@ -48,6 +50,16 @@ public class Board {
 			this.nextTurn();
 
 			logger.gameplay("Player " + type + " placed a piece at X:" + x + " Y:" + y);
+
+			// Prints the Board if debug mode is on
+			if (!debug)
+				for (int xx = 0; xx < this.getBoard().length; xx++) {
+					for (int yy = 0; yy < this.getBoard()[0].length; yy++) {
+						System.out.print(this.getBoard()[xx][yy] + " ");
+					}
+					System.out.println();
+				}
+
 			return true;
 		} else {
 			// Disable placing onto another piece
@@ -109,153 +121,117 @@ public class Board {
 		return this.history;
 	}
 
-	// Get surrounding pieces
-	public HashMap<Position, Stone> getSurroundings(Location loc) {
-		HashMap<Position, Stone> surroundings = new HashMap<>();
-		int x = loc.getX(), y = loc.getY();
-		// Up
-		y++;
-		if (y > 18) {
-			surroundings.put(Position.UP, Stone.EMPTY);
-		} else {
-			surroundings.put(Position.UP, this.getPieceFromPosition(x, y));
-		}
-		y--;
-		// Down
-		y--;
-		if (y < 0) {
-			surroundings.put(Position.DOWN, Stone.EMPTY);
-		} else {
-			surroundings.put(Position.DOWN, this.getPieceFromPosition(x, y));
-		}
-		y++;
-		// Left
-		x--;
-		if (x < 0) {
-			surroundings.put(Position.LEFT, Stone.EMPTY);
-		} else {
-			surroundings.put(Position.LEFT, this.getPieceFromPosition(x, y));
-		}
-		x++;
-		// Right
-		x++;
-		if (x > 18) {
-			surroundings.put(Position.RIGHT, Stone.EMPTY);
-		} else {
-			surroundings.put(Position.RIGHT, this.getPieceFromPosition(x, y));
-		}
-		x--;
-		return surroundings;
-	}
+	public boolean isSelfCapture(Stone stone, Location loc, Position from) {
+		boolean up = false, down = false, left = false, right = false;
 
-	// Check Self Capture
-	public boolean checkSelfCapture(Location loc, Stone s, Position fromPos) {
-		boolean output = false;
-		HashMap<Position, Stone> surroundings = this.getSurroundings(loc);
-		Stone original = Stone.valueOf(this.getTurn().toUpperCase());
-
-		for (Position pos : surroundings.keySet()) {
-			System.err.println(pos.toString()+": "+surroundings.get(pos));
+		// Check from position condition
+		if (from != Position.NULL) {
+			if (from == Position.UP)
+				up = true;
+			else if (from == Position.DOWN)
+				down = true;
+			else if (from == Position.LEFT)
+				left = true;
+			else if (from == Position.RIGHT)
+				right = true;
 		}
-		System.err.println(s);
-		
-		boolean up = false;
-		boolean down = false;
-		boolean left = false;
-		boolean right = false;
-		for (Position pos : surroundings.keySet()) {
-			if (pos == fromPos) {
-				String positionString = fromPos.toString().toLowerCase();
-				if (positionString.equals("up")) {
-					up = true;
-				} else if (positionString.equals("down")) {
-					down = true;
-				} else if (positionString.equals("left")) {
-					left = true;
-				} else if (positionString.equals("right")) {
+
+		/**
+		 * Check surrounding pieces
+		 */
+		int x = loc.getX();
+		int y = loc.getY();
+
+		// +x (right)
+		if (right != true)
+			if (x + 1 > 18) {
+				right = true;
+			} else {
+				Stone test = this.getPieceFromPosition(x, y + 1);
+				if (debug)
+					System.out.println("Right > Original: " + stone + " Test: " + test);
+				if (test == stone) {
+					// Recursive Test
+					if (isSelfCapture(test, new Location(x + 1, y), Position.RIGHT)) {
+						right = true;
+					}
+					if (debug)
+						System.err.println("Recursive");
+				} else if (test == Stone.EMPTY) {
+					right = false;
+				} else {
 					right = true;
 				}
-				System.out.println("Recursive!");
+			}
+
+		// -x (left)
+		if (left != true)
+			if (x - 1 < 0) {
+				left = true;
 			} else {
-				if (pos == Position.UP) {System.out.println("UP!");
-					Location newLocation = loc.add(0, 1);
-					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
-					// System.out.println(newLocation);
-
-					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
-						up = true;
-					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
-						up = false;
-					} else {System.out.println("Hit Wall!");
-						if (detect == original) {System.out.println("Same Color!");
-							this.checkSelfCapture(newLocation, detect, Position.UP);
-						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
-							up = true;
-						}
+				Stone test = this.getPieceFromPosition(x, y - 1);
+				if (debug)
+					System.out.println("Left > Original: " + stone + " Test: " + test);
+				if (test == stone) {
+					// Recursive Test
+					if (isSelfCapture(test, new Location(x - 1, y), Position.LEFT)) {
+						left = true;
 					}
-					loc.add(0, -1);
-				} else if (pos == Position.DOWN) {System.out.println("DOWN!");
-					Location newLocation = loc.add(0, -1);
-					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
-
-					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
-						down = true;
-					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
-						down = false;
-					} else {
-						if (detect == original) {System.out.println("Same Color!");
-							this.checkSelfCapture(newLocation, detect, Position.DOWN);
-						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
-							down = true;
-						}
-					}
-					loc.add(0, 1);
-				} else if (pos == Position.LEFT) {System.out.println("LEFT!");
-					Location newLocation = loc.add(-1, 0);
-					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
-
-					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
-						down = true;
-					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
-						left = false;
-					} else {
-						if (detect == original) {System.out.println("Same Color!");
-							this.checkSelfCapture(newLocation, detect, Position.LEFT);
-						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
-							left = true;
-						}
-					}
-					loc.add(1, 0);
-				} else if (pos == Position.RIGHT) {System.out.println("RIGHT!");
-					Location newLocation = loc.add(1, 0);
-					Stone detect = this.getPieceFromPosition(newLocation.getX(), newLocation.getY());
-
-					if (detect == Stone.BOARDER) {System.out.println("Boarder!");
-						down = true;
-					} else if (detect == Stone.EMPTY) {System.out.println("Air!");
-						right = false;
-					} else {
-						if (detect == original) {System.out.println("Same Color!");
-							this.checkSelfCapture(newLocation, detect, Position.RIGHT);
-						} else {System.out.println("WALLLLL!");System.out.println("Detect: "+detect.toString()+" Original: "+original);
-							right = true;
-						}
-					}
-					loc.add(-1, 0);
+					if (debug)
+						System.err.println("Recursive");
+				} else if (test == Stone.EMPTY) {
+					left = false;
+				} else {
+					left = true;
 				}
 			}
-		}
 
-		if (up && down && left && right) {
-			output = true;
-		}
-		System.out.println(output);
-		for(int xx=0 ;xx<board.length;xx++){
-			for(int yy=0;yy<board[0].length;yy++){
-				System.out.print(board[xx][yy] + " ");
+		// +y (up)
+		if (up != true)
+			if (x + 1 > 18) {
+				up = true;
+			} else {
+				Stone test = this.getPieceFromPosition(x + 1, y);
+				if (debug)
+					System.out.println("Up > Original: " + stone + " Test: " + test);
+				if (test == stone) {
+					// Recursive Test
+					if (isSelfCapture(test, new Location(x, y + 1), Position.UP)) {
+						up = true;
+					}
+					if (debug)
+						System.err.println("Recursive");
+				} else if (test == Stone.EMPTY) {
+					up = false;
+				} else {
+					up = true;
+				}
 			}
-			System.out.println();
-		}
-		return output;
+
+		// -y (down)
+		if (down != true)
+			if (y - 1 < 0) {
+				down = true;
+			} else {
+				Stone test = this.getPieceFromPosition(x - 1, y);
+				if (debug)
+					System.out.println("Down > Original: " + stone + " Test: " + test);
+				if (test == stone) {
+					// Recursive Test
+					if (isSelfCapture(test, new Location(x, y - 1), Position.DOWN)) {
+						down = true;
+					}
+					if (debug)
+						System.err.println("Recursive");
+				} else if (test == Stone.EMPTY) {
+					down = false;
+				} else {
+					down = true;
+				}
+			}
+
+		if (!up || !down || !left || !right)
+			return false;
+		return true;
 	}
 }
